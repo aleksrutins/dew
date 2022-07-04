@@ -8,19 +8,32 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var articles = [Article]()
+    @State var articles = [ArticleMeta]()
+    @State var searchContent = ""
     @EnvironmentObject var gateway: Gateway
     var body: some View {
-        List(articles, id: \.id) { article in
-            ZStack(alignment: .topLeading) {
-                RoundedRectangle(cornerRadius: 10).fill(Color("BgAccent"))
-                VStack(alignment: .leading) {
-                    Text(article.title).font(.title2).multilineTextAlignment(.leading)
-                    Text(article.description).multilineTextAlignment(.leading)
-                }.padding()
+        HStack {
+            ScrollView {
+                LazyVStack {
+                    ForEach(articles, id: \.id) { article in
+                        ZStack(alignment: .topLeading) {
+                            RoundedRectangle(cornerRadius: 10).fill(Color.white)
+                            VStack(alignment: .leading) {
+                                Text(article.title).font(.title2).multilineTextAlignment(.leading)
+                                Text(article.description).multilineTextAlignment(.leading)
+                            }.padding()
+                        }
+                    }
+                }
+                .task {
+                    await loadData()
+                }
+                .refreshable {
+                    await loadData()
+                }
+                .searchable(text: $searchContent).frame(maxWidth: 500)
+                .padding()
             }
-        }.task {
-            await loadData()
         }
     }
     
@@ -30,7 +43,6 @@ struct HomeView: View {
         }
         catch let err {
             print(err)
-            articles = [Article]()
         }
     }
 }

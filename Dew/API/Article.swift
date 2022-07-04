@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Article : Codable, Hashable {
+struct ArticleMeta : Codable, Hashable {
     let type_of: String
     let id: Int
     let title: String
@@ -35,5 +35,5 @@ struct Article : Codable, Hashable {
 }
 
 extension Gateway {
-    func getArticles(page: Int = 1) async throws -> [Article] { try await sendRequest(path: "articles?page=\(page)") }
+    func getArticles(page: Int = 1) async throws -> [ArticleMeta] { try await sendRequest(path: "articles?page=\(page)") }
 }

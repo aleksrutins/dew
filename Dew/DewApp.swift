@@ -14,6 +14,6 @@ struct DewApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(gateway)
-        }.windowStyle(.hiddenTitleBar)
+        }
     }
 }
