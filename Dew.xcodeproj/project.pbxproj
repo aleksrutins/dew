@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1FEF0D28D137DE0041D60F /* Tagged in Frameworks */ = {isa = PBXBuildFile; productRef = 3F1FEF0C28D137DE0041D60F /* Tagged */; };
+		3F1FEF1028D13B190041D60F /* String+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FEF0F28D13B190041D60F /* String+Identifiable.swift */; };
 		3F76013F28723739005AF962 /* DewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76013E28723739005AF962 /* DewApp.swift */; };
 		3F76014128723739005AF962 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76014028723739005AF962 /* ContentView.swift */; };
 		3F7601432872373B005AF962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F7601422872373B005AF962 /* Assets.xcassets */; };
@@ -40,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F1FEF0F28D13B190041D60F /* String+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Identifiable.swift"; sourceTree = "<group>"; };
 		3F76013B28723739005AF962 /* Dew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F76013E28723739005AF962 /* DewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DewApp.swift; sourceTree = "<group>"; };
 		3F76014028723739005AF962 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1FEF0D28D137DE0041D60F /* Tagged in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F1FEF0E28D137EA0041D60F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3F1FEF0F28D13B190041D60F /* String+Identifiable.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		3F76013228723739005AF962 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +119,7 @@
 		3F76013D28723739005AF962 /* Dew */ = {
 			isa = PBXGroup;
 			children = (
+				3F1FEF0E28D137EA0041D60F /* Utilities */,
 				3F76017028723E46005AF962 /* API */,
 				3F76013E28723739005AF962 /* DewApp.swift */,
 				3F76014028723739005AF962 /* ContentView.swift */,
@@ -172,6 +185,7 @@
 			);
 			name = Dew;
 			packageProductDependencies = (
+				3F1FEF0C28D137DE0041D60F /* Tagged */,
 			);
 			productName = Dew;
 			productReference = 3F76013B28723739005AF962 /* Dew.app */;
@@ -246,6 +260,7 @@
 			);
 			mainGroup = 3F76013228723739005AF962;
 			packageReferences = (
+				3F1FEF0B28D137DE0041D60F /* XCRemoteSwiftPackageReference "swift-tagged" */,
 			);
 			productRefGroup = 3F76013C28723739005AF962 /* Products */;
 			projectDirPath = "";
@@ -291,6 +306,7 @@
 			files = (
 				3F76016D28723CF4005AF962 /* HomeView.swift in Sources */,
 				3F76014128723739005AF962 /* ContentView.swift in Sources */,
+				3F1FEF1028D13B190041D60F /* String+Identifiable.swift in Sources */,
 				3F7601762872445F005AF962 /* User.swift in Sources */,
 				3F76016F28723E36005AF962 /* Gateway.swift in Sources */,
 				3F7601782872453C005AF962 /* Organization.swift in Sources */,
@@ -612,6 +628,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3F1FEF0B28D137DE0041D60F /* XCRemoteSwiftPackageReference "swift-tagged" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-tagged";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F1FEF0C28D137DE0041D60F /* Tagged */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F1FEF0B28D137DE0041D60F /* XCRemoteSwiftPackageReference "swift-tagged" */;
+			productName = Tagged;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3F76013328723739005AF962 /* Project object */;
 }
