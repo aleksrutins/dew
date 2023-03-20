@@ -20,11 +20,20 @@ struct HomeView: View {
                         ZStack(alignment: .topLeading) {
                             RoundedRectangle(cornerRadius: 6).fill(colorScheme == .light ? Color.white : Color.black)
                             VStack(alignment: .leading) {
-                                Text(article.title).font(.title2).multilineTextAlignment(.leading)
-                                HStack {
-                                    ForEach(article.tag_list) { Text("#" + $0) }
+                                if article.cover_image != nil {
+                                    AsyncImage(url: article.cover_image)
+                                        .frame(maxWidth: 500)
+                                        .clipShape(RoundedRectangle(cornerRadius: 6))
+                                        .scaledToFit()
+                                        .clipped()
                                 }
-                            }.padding()
+                                VStack(alignment: .leading) {
+                                    Text(article.title).font(.title2).multilineTextAlignment(.leading)
+                                    HStack {
+                                        ForEach(article.tag_list) { Text("#" + $0) }
+                                    }
+                                }.padding()
+                            }
                         }
                         .frame(maxWidth: 500)
                         .padding([.horizontal])
