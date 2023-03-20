@@ -26,6 +26,8 @@ struct HomeView: View {
                                 }
                             }.padding()
                         }
+                        .frame(maxWidth: 500)
+                        .padding([.horizontal])
                     }
                 }
                 .task {
@@ -34,8 +36,8 @@ struct HomeView: View {
                 .refreshable {
                     await loadData()
                 }
-                .searchable(text: $searchContent).frame(maxWidth: 500)
-                .padding()
+                .searchable(text: $searchContent)
+                .padding([.vertical])
             }
         }
     }
